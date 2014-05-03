@@ -1,5 +1,5 @@
 Options +FollowSymLinks
-#:AllowOverride all
+#AllowOverride all
 RewriteEngine On  
 RewriteBase /
 #RewriteRule ^jw/(.*)(/e/|/editpost//d/|/deletepost/)(.*)$ https://%{SERVER_NAME}/jwssl/$1$2$3 [R]
