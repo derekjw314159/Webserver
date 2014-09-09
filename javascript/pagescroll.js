@@ -34,13 +34,13 @@ function validatenum2(fld) {
 		if (elems[i].tabIndex == (1 + id)) {
 		    elems[i].focus();
 		    elems[i].select();
-		    elems[i].focus();
 		    return;
 		    }
 		}
 	    for(i=0; i< elems.length ; i++){
 		if (elems[i].tabIndex == 1){
 		    elems[i].focus();
+		    elems[i].select();
 		    return;
 		    }
 		}
