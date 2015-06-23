@@ -48,7 +48,7 @@ function validatenum2(fld) {
 			}
 		    }
 		}
-	    }
+	    } // end or j loop
 	return; // not a blank
 	}
     return; // length zero

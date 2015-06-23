@@ -1,4 +1,6 @@
-# Files to ignore
-
 yii/**
 jweb/**
+lar/**
+jweb
+yii
+lar
