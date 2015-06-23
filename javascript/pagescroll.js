@@ -24,22 +24,28 @@ function validatenum2(fld) {
     var chr="";
     var id=0;
     if (ll > 0) {
-	chr= ff.value.substr(ll-1, 1);
-	if (chr == " ") {
-	    // Chop off the final blank
-	    ff.value= ff.value.substr(0,ll-1);
-	    id = ff.tabIndex; // will be tabindexnnn
-	    var elems= document.getElementsByTagName("input");
-	    for(i=0; i< elems.length ; i++){
-		if (elems[i].tabIndex == (1 + id)) {
-		    elems[i].focus();
-		    return;
-		    }
+	for (j=0 ; j<ll ; j++){
+	    chr= ff.value.substr(j, 1);
+	    if (chr == "(" || chr==")" ) {
+		ff.value=ff.value.substr(j-1,ll-j-1)
+		return;
 		}
-	    for(i=0; i< elems.length ; i++){
-		if (elems[i].tabIndex == 1){
-		    elems[i].focus();
-		    return;
+	    if (chr == " ") {
+		// Chop off the final blank
+		ff.value= ff.value.substr(0, j);
+		id = ff.tabIndex; // will be tabindexnnn
+		var elems= document.getElementsByTagName("input");
+		for(i=0; i< elems.length ; i++){
+		    if (elems[i].tabIndex == (1 + id)) {
+			elems[i].focus();
+			return;
+			}
+		    }
+		for(i=0; i< elems.length ; i++){
+		    if (elems[i].tabIndex == 1){
+			elems[i].focus();
+			return;
+			}
 		    }
 		}
 	    }
