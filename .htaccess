@@ -1,0 +1,15 @@
+Options +FollowSymLinks -Indexes
+#AllowOverride all
+RewriteEngine On  
+RewriteBase /
+#RewriteRule ^jw/(.*)(/e/|/editpost//d/|/deletepost/)(.*)$ https://%{SERVER_NAME}/jwssl/$1$2$3 [R]
+
+#RewriteRule ^jw/(.*)$   jweb/cgi/test.cgi?r=$1
+#RewriteRule ^jwssl/(.*)$   jweb/cgis/test.cgi?r=$1
+
+RewriteCond %{HTTPS} off
+RewriteCond %{REQUEST_URI} ^/jw/(.*)(/e/|/editpost/|/d/|/deletepost/|/a/|/addpost/)(.*)$
+RewriteRule ^(.*)$   https://%{SERVER_NAME}/$1 [R,L]
+
+RewriteRule ^jw/(.*)(/e/|/editpost/|/d/|/deletepost/|/a/|/addpost/)(.*)$ jweb/cgis/test.cgi?r=$1$2$3  [L]
+RewriteRule ^jw/(.*)$   jweb/cgi/test.cgi?r=$1
