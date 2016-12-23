@@ -9,12 +9,9 @@ function redirect(x) {
 	location.replace(x);
 }
 
-
-
 function validatenum() {
     return;
     }
-
 
 function validatenum2(fld) {
     
@@ -53,4 +50,12 @@ function validatenum2(fld) {
 	}
     return; // length zero
     }
+
+function inputpink(field){
+	field.style.background = "pink";
+	}
+
+function inputwhite(field){
+	field.style.background = "white";
+	}
 
