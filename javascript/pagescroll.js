@@ -9,7 +9,7 @@ function leaderScroll() {
 }
 
 function tableScroll(){
-	document.getElementById("tablebody").scrollTop += 5;
+	document.getElementById("tablebody").scrollTop += 3;
     	scrolldelay = setTimeout('tableScroll()',100); // scrolls every 100 milliseconds
 }
 
