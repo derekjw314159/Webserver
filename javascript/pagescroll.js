@@ -1,3 +1,18 @@
+function leaderScroll() {
+	x = window.innerHeight; // Total window available
+	x -= document.getElementById("tablebody").offsetTop; // Subtract already written
+	x -= 50; // Leave 50px at bottom
+	document.getElementById("tablebody").style.height = x // Resize
+
+	// First delay is two seconds
+	scrolldelay = setTimeout('tableScroll()', 5000); 
+}
+
+function tableScroll(){
+	document.getElementById("tablebody").scrollTop += 5;
+    	scrolldelay = setTimeout('tableScroll()',100); // scrolls every 100 milliseconds
+}
+
 function pageScroll() {
     	window.scrollBy(0,5); // horizontal and vertical scroll increments
     	scrolldelay = setTimeout('pageScroll()',100); // scrolls every 100 milliseconds
