@@ -4,6 +4,12 @@ function leaderScroll() {
 	x -= 50; // Leave 50px at bottom
 	document.getElementById("tablebody").style.height = x; // Resize
 
+	// Check width of elements with scrollbar
+	elem1 = document.getElementById("tablehead").clientWidth;
+	elem2 = document.getElementById("tablebody").clientWidth;
+	document.getElementById("tablebody").style.width = elem1;
+	document.getElementById("tablehead").style.width = elem2;
+
 	// First delay is two seconds
 	tm = document.getElementById("initial").innerHTML;
 	tm = parseFloat(tm).toFixed(3);
