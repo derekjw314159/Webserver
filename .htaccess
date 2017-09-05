@@ -11,5 +11,18 @@ RewriteCond %{HTTPS} off
 RewriteCond %{REQUEST_URI} ^/jw/(.*)(/e/|/editpost/|/d/|/deletepost/|/a/|/addpost/)(.*)$
 RewriteRule ^(.*)$   https://%{SERVER_NAME}/$1 [R,L]
 
+# PHP redirection
+RewriteCond %{HTTPS} off
+RewriteCond %{REQUEST_URI} ^/pw/(.*)(/e/|/editpost/|/d/|/deletepost/|/a/|/addpost/)(.*)$
+RewriteRule ^(.*)$   https://%{SERVER_NAME}/$1 [R,L]
+
+# Need extra logic if the PHP string is accessed directly
+RewriteCond %{HTTPS} off
+RewriteCond %{QUERY_STRING} (.*)(/e/|/editpost/|/d/|/deletepost/|/a/|/addpost/)(.*)$
+RewriteRule ^(.*)$   https://%{SERVER_NAME}/$1 [R,L]
+
 RewriteRule ^jw/(.*)(/e/|/editpost/|/d/|/deletepost/|/a/|/addpost/)(.*)$ jweb/cgis/test.cgi?r=$1$2$3  [L]
 RewriteRule ^jw/(.*)$  jweb/cgi/test.cgi?r=$1
+
+RewriteRule ^pw/(.*)(/e/|/editpost/|/d/|/deletepost/|/a/|/addpost/)(.*)$ jweb/cgis/test.php?r=$1$2$3  [L]
+RewriteRule ^pw/(.*)$  jweb/cgi/test.php?r=$1
