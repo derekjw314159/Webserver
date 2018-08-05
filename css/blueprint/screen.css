@@ -263,6 +263,10 @@ hr.space {background:#fff;color:#fff;visibility:hidden;}
 .clearfix, .container {display:block;}
 .clear {clear:both;}
 
+
+
+/* Extra CSS features */
+
 input:focus{
 	outline:thin dotted;
 	background-color: pink;
