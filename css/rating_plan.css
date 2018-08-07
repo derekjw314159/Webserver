@@ -3,10 +3,7 @@ Max width before this PARTICULAR table gets nasty
 This query will take effect for any screen smaller than 760px
 and also iPads specifically.
 */
-@media 
-only screen and (max-width: 760px),
-(min-device-width: 768px) and (max-device-width: 1024px)  {
-
+@media screen and (max-width: 1050px) and (orientation: portrait) {
 	/* Force table to not be like tables anymore */
 	table.tableplan, table.tableplan thead, table.tableplan tbody, table.tableplan th, table.tableplan td, table.tableplan tr { 
 		display: block; 
@@ -19,7 +16,7 @@ only screen and (max-width: 760px),
 		left: -9999px;
 	}
 	
-	table.tableplan tr { border: 1px solid #ccc; }
+	table.tableplan tr { border: solid #000000 2px; }
 	
 	table.tableplan td { 
 		/* Behave  like a "row" */
@@ -43,14 +40,16 @@ only screen and (max-width: 760px),
 	/*
 	Label the data
 	*/
-	table.tableplan td:nth-of-type(1):before { content: "First Name"; }
-	table.tableplan td:nth-of-type(2):before { content: "Last Name"; }
-	table.tableplan td:nth-of-type(3):before { content: "Job Title"; }
-	table.tableplan td:nth-of-type(4):before { content: "Favorite Color"; }
-	table.tableplan td:nth-of-type(5):before { content: "Wars of Trek?"; }
-	table.tableplan td:nth-of-type(6):before { content: "Secret Alias"; }
-	table.tableplan td:nth-of-type(7):before { content: "Date of Birth"; }
-	table.tableplan td:nth-of-type(8):before { content: "Dream Vacation City"; }
-	table.tableplan td:nth-of-type(9):before { content: "GPA"; }
-	table.tableplan td:nth-of-type(10):before { content: "Arbitrary Data"; }
+	table.tableplan td:nth-of-type(1):before { content: "Tee 1"; }
+	table.tableplan td:nth-of-type(2):before { content: "Tee 1"; }
+	table.tableplan td:nth-of-type(3):before { content: "Tee 1"; }
+	table.tableplan td:nth-of-type(4):before { content: "Tee 1"; }
+	table.tableplan td:nth-of-type(5):before { content: "Tee 1"; }
+	table.tableplan td:nth-of-type(6):before { content: "Player"; }
+	table.tableplan td:nth-of-type(7):before { content: "Hit / Layup"; }
+	table.tableplan td:nth-of-type(8):before { content: "To Green"; }
+	table.tableplan td:nth-of-type(9):before { content: "Edit / Copy"; }
+	table.tableplan td:nth-of-type(10):before { content: "Altitude"; }
+	table.tableplan td:nth-of-type(11):before { content: "F/W Width"; }
+	table.tableplan td:nth-of-type(10):before { content: "Bunker in LZ"; }
 }
