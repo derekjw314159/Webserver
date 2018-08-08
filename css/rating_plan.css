@@ -6,7 +6,7 @@ and also iPads specifically.
 @media screen and (max-width: 1050px) and (orientation: portrait) {
 	/* Force table to not be like tables anymore */
 	table.tableplan, table.tableplan thead, table.tableplan tbody, table.tableplan th, table.tableplan td, table.tableplan tr { 
-		display: block; 
+		display: block !important; 
 	}
 	
 	/* Hide table headers (but not display: none;, for accessibility) */
@@ -16,14 +16,20 @@ and also iPads specifically.
 		left: -9999px;
 	}
 	
-	table.tableplan tr { border: solid #000000 2px; }
+	table.tableplan tr {
+		border: solid #000000 2px;
+		border-collapse: true;
+		}
 	
 	table.tableplan td { 
 		/* Behave  like a "row" */
 		border: none;
-		border-bottom: 1px solid #eee; 
+		border-bottom: 1px solid #eee;
+		border-collapse: true;
 		position: relative;
-		padding-left: 50%; 
+		padding-left: 40%;
+		font-size: 1.5em;
+		display: block;
 	}
 	
 	table.tableplan td:before { 
@@ -32,9 +38,10 @@ and also iPads specifically.
 		/* Top/left values mimic padding */
 		top: 6px;
 		left: 6px;
-		width: 45%; 
+		width: 35%; 
 		padding-right: 10px; 
 		white-space: nowrap;
+		font-size: 1em;
 	}
 	
 	/*
@@ -51,5 +58,5 @@ and also iPads specifically.
 	table.tableplan td:nth-of-type(9):before { content: "Edit / Copy"; }
 	table.tableplan td:nth-of-type(10):before { content: "Altitude"; }
 	table.tableplan td:nth-of-type(11):before { content: "F/W Width"; }
-	table.tableplan td:nth-of-type(10):before { content: "Bunker in LZ"; }
+	table.tableplan td:nth-of-type(12):before { content: "Bunker in LZ"; }
 }
