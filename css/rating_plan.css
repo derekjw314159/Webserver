@@ -7,6 +7,12 @@ td.zz, th.zz {
 	border-collapse: collapse;
 	}
 
+
+td {
+	border-left: 1px solid lightgray;
+	border-right: 1px solid lightgray;
+	}
+
 /* Need to make the background white to avoid transparent responsive design mangling "::before""
  * text
  */
@@ -22,7 +28,7 @@ and also iPads specifically.
 	/* Force table to not be like tables anymore */
 	table.tableplan {
 		-webkit-text-size-adjust: 100%;
-		font-size: 16px; 
+		/* font-size: 16px; */
 		}
 
 	table.tableplan, table.tableplan thead, table.tableplan tbody, table.tableplan th, table.tableplan td, table.tableplan tr { 
@@ -51,6 +57,14 @@ and also iPads specifically.
 		font-size: 1.3em;
 		-webkit-text-size-adjust: 100%;
 	}
+
+	table.tableplan td.zzempty {
+		font-size: 0px;
+		padding: 0px;
+		border: 0px;
+		border-collapse: collapse;
+		-webkit-text-size-adjust: 100%;
+		}
 	
 	table.tableplan td:before { 
 		/* Now like a table header */
@@ -68,16 +82,5 @@ and also iPads specifically.
 	/*
 	Label the data
 	*/
-	table.tableplan td:nth-of-type(1):before { content: attr(data-tee); }
-	table.tableplan td:nth-of-type(2):before { content: attr(data-tee); }
-	table.tableplan td:nth-of-type(3):before { content: attr(data-tee); }
-	table.tableplan td:nth-of-type(4):before { content: attr(data-tee); }
-	table.tableplan td:nth-of-type(5):before { content: attr(data-tee); }
-	table.tableplan td:nth-of-type(6):before { content: "Player"; }
-	table.tableplan td:nth-of-type(7):before { content: "Hit / Layup"; }
-	table.tableplan td:nth-of-type(8):before { content: "To Green"; }
-	table.tableplan td:nth-of-type(9):before { content: "Edit / Copy"; }
-	table.tableplan td:nth-of-type(10):before { content: "Altitude"; }
-	table.tableplan td:nth-of-type(11):before { content: "F/W Width"; }
-	table.tableplan td:nth-of-type(12):before { content: "Bunker in LZ"; }
+	table.tableplan td:before { content: attr(data-tee); }
 }
